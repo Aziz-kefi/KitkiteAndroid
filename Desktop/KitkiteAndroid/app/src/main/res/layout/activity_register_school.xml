@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterSchoolActivity"
+    android:padding="20dp"
+    android:background="#EDEDED"
+    >
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="361dp"
+        android:layout_height="52dp"
+        android:layout_alignStart="@+id/schoolname"
+        android:layout_alignEnd="@+id/schoolname"
+        android:layout_marginStart="-2dp"
+        android:layout_marginEnd="-8dp"
+        android:gravity="center"
+        android:text="Create School Account"
+        android:textColor="#004AAD"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <EditText
+        android:id="@+id/schoolname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
+
+        android:gravity="center"
+        android:hint="Enter School name"
+        android:minHeight="48dp"
+        android:padding="10dp" />
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/schoolname"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:hint="Enter Email"
+        android:minHeight="48dp"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="10dp" />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/confirmpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/Registerbutton"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_below="@+id/confirmpassword"
+        android:layout_marginTop="10dp"
+        android:text="REGISTER"
+        android:backgroundTint="#1324BE"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:cornerRadius="20dp" />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Already have an account? "
+        android:textSize="20sp"
+        android:id="@+id/already"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/Registerbutton"
+        android:layout_marginLeft="60dp"/>
+
+    <Button
+        android:id="@+id/gotologin"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_below="@+id/already"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#1324BE"
+        android:outlineAmbientShadowColor="@color/black"
+        android:text="LOGIN"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:cornerRadius="20dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="391dp"
+        android:layout_height="105dp"
+        android:layout_below="@+id/gotologin"
+        android:layout_marginTop="43dp"
+        app:srcCompat="@drawable/logo2_removebg_preview" />
+
+
+</RelativeLayout>
