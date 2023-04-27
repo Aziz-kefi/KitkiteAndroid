@@ -19,7 +19,7 @@
         android:layout_marginEnd="-8dp"
         android:gravity="center"
         android:text="Create School Account"
-        android:textColor="#004AAD"
+        android:textColor="#42B1DE"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,7 +38,7 @@
         android:layout_marginTop="27dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/nav_bar"
 
         android:gravity="center"
         android:hint="Enter School name"
@@ -55,7 +55,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/nav_bar"
         android:gravity="center"
         android:hint="Enter Email"
         android:minHeight="48dp"
@@ -70,7 +70,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/nav_bar"
         android:gravity="center"
         android:hint="Enter Password"
         android:inputType="textPassword"
@@ -87,7 +87,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/nav_bar"
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:minHeight="48dp"
@@ -100,7 +100,7 @@
         android:layout_below="@+id/confirmpassword"
         android:layout_marginTop="10dp"
         android:text="REGISTER"
-        android:backgroundTint="#1324BE"
+        android:backgroundTint="#42B1DE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:cornerRadius="20dp" />
     <TextView
@@ -121,7 +121,7 @@
         android:layout_height="65dp"
         android:layout_below="@+id/already"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#1324BE"
+        android:backgroundTint="#42B1DE"
         android:outlineAmbientShadowColor="@color/black"
         android:text="LOGIN"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -133,7 +133,7 @@
         android:layout_height="105dp"
         android:layout_below="@+id/gotologin"
         android:layout_marginTop="43dp"
-        app:srcCompat="@drawable/logo2_removebg_preview" />
+        app:srcCompat="@drawable/logokit" />
 
 
 </RelativeLayout>

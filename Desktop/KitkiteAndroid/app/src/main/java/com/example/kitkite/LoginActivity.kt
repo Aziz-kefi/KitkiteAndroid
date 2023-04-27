@@ -1,11 +1,13 @@
 package com.example.kitkite
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -43,14 +45,29 @@ class LoginActivity : AppCompatActivity() {
                 Request.Method.POST, url, data,
                 Response.Listener { response ->
                     Log.i("mylog", response.toString())
+                    val token = response.getString("token")
+                    val sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                    with (sharedPref.edit()) {
+                        putString("token", token)
+                        apply()
+                    }
+
+                        val intent = Intent(this,HomeActivity::class.java)
+                        startActivity(intent)
+
                 },
                 Response.ErrorListener { error ->
-                    Log.i("mylog", error.message.toString())
+                    val response = JSONObject(error.networkResponse.data.toString(Charsets.UTF_8))
+                    val errorMessage = response.getJSONArray("data").getJSONObject(0).getString("msg")
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Login Error")
+                    builder.setMessage(errorMessage)
+                    builder.setPositiveButton("OK", null)
+                    val dialog = builder.create()
+                    dialog.show()
                 })
 
             queue.add(stringRequest)
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
         }
 
     }

@@ -6,32 +6,26 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
 
-class HomeActivity : AppCompatActivity() {
+class SchoolActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_school)
         lateinit var profile : ImageView
         lateinit var school : ImageView
         lateinit var event : ImageView
         lateinit var home : ImageView
         lateinit var param : ImageView
         lateinit var message : ImageView
-        lateinit var create :ImageView
         profile=findViewById<ImageView>(R.id.icon1)
         school=findViewById<ImageView>(R.id.icon2)
         message=findViewById<ImageView>(R.id.icon3)
         event=findViewById<ImageView>(R.id.icon4)
         home=findViewById<ImageView>(R.id.icon5)
         param=findViewById<ImageView>(R.id.icon6)
-        create=findViewById<ImageView>(R.id.icon7)
         profile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
 
-        }
-        create.setOnClickListener{
-            val intent = Intent(this,CreatePostActivity::class.java)
-            startActivity(intent)
         }
         school.setOnClickListener {
             val intent = Intent(this,SchoolActivity::class.java)

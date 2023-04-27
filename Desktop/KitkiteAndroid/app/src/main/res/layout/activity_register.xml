@@ -19,7 +19,7 @@
         android:layout_marginEnd="-8dp"
         android:gravity="center"
         android:text="Create User Account"
-        android:textColor="#004AAD"
+        android:textColor="#42B1DE"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,7 +38,7 @@
         android:layout_marginTop="27dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/nav_bar"
 
         android:gravity="center"
         android:hint="Enter First Name"
@@ -55,14 +55,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/nav_bar"
         android:hint="Enter last Name"
         android:minHeight="48dp"
         android:padding="10dp" />
     <EditText
         android:gravity="center"
         android:padding="10dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/nav_bar"
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
     <EditText
         android:gravity="center"
         android:padding="10dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/nav_bar"
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/nav_bar"
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:minHeight="48dp"
@@ -114,7 +114,7 @@
         android:layout_below="@+id/confirmpassword"
         android:layout_marginTop="10dp"
         android:text="REGISTER"
-        android:backgroundTint="#1324BE"
+        android:backgroundTint="#42B1DE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:cornerRadius="20dp" />
     <TextView
@@ -135,19 +135,11 @@
         android:layout_height="65dp"
         android:layout_below="@+id/already"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#1324BE"
+        android:backgroundTint="#42B1DE"
         android:outlineAmbientShadowColor="@color/black"
         android:text="LOGIN"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:cornerRadius="20dp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="391dp"
-        android:layout_height="105dp"
-        android:layout_below="@+id/gotologin"
-        android:layout_marginTop="-8dp"
-        app:srcCompat="@drawable/logo2_removebg_preview" />
 
 
 </RelativeLayout>

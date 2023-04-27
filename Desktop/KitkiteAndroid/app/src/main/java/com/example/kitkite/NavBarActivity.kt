@@ -1,37 +1,34 @@
 package com.example.kitkite
-
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 
-class HomeActivity : AppCompatActivity() {
+class NavBarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_nav_bar)
         lateinit var profile : ImageView
         lateinit var school : ImageView
         lateinit var event : ImageView
         lateinit var home : ImageView
         lateinit var param : ImageView
         lateinit var message : ImageView
-        lateinit var create :ImageView
         profile=findViewById<ImageView>(R.id.icon1)
         school=findViewById<ImageView>(R.id.icon2)
         message=findViewById<ImageView>(R.id.icon3)
         event=findViewById<ImageView>(R.id.icon4)
         home=findViewById<ImageView>(R.id.icon5)
         param=findViewById<ImageView>(R.id.icon6)
-        create=findViewById<ImageView>(R.id.icon7)
         profile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
 
-        }
-        create.setOnClickListener{
-            val intent = Intent(this,CreatePostActivity::class.java)
-            startActivity(intent)
         }
         school.setOnClickListener {
             val intent = Intent(this,SchoolActivity::class.java)
@@ -54,4 +51,6 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+
 }

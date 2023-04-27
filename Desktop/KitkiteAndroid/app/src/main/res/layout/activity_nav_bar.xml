@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#EDEDED"
+    tools:context=".NavBarActivity">
+    <LinearLayout
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/nav_bar"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <ImageView
+
+            android:id="@+id/icon1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+
+            android:background="@drawable/circular_button_nav"
+            android:clickable="true"
+            android:contentDescription="Profile"
+            android:src="@drawable/icon1" />
+
+        <ImageView
+
+            android:id="@+id/icon2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+
+            android:background="@drawable/circular_button_nav"
+            android:clickable="true"
+            android:contentDescription="Spots"
+            android:src="@drawable/icon2" />
+
+        <ImageView
+
+            android:id="@+id/icon3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/circular_button_nav"
+            android:clickable="true"
+
+            android:contentDescription="Message"
+            android:src="@drawable/bulle" />
+
+        <ImageView
+
+            android:id="@+id/icon4"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/circular_button_nav"
+            android:clickable="true"
+            android:contentDescription="Events"
+            android:src="@drawable/icon4" />
+
+        <ImageView
+
+            android:id="@+id/icon5"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/circular_button_nav"
+            android:clickable="true"
+            android:contentDescription="Home"
+            android:src="@drawable/icon5" />
+
+        <ImageView
+
+            android:id="@+id/icon6"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/circular_button_nav"
+            android:clickable="true"
+
+            android:contentDescription="Params"
+            android:src="@drawable/icon6" />
+    </LinearLayout>
+
+</RelativeLayout>

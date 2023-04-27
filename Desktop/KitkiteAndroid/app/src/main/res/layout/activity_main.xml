@@ -11,27 +11,28 @@
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.7"
+        android:alpha="0.5"
         android:background="@drawable/oceanwaves"
         />
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="412dp"
         android:layout_height="269dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo2_removebg_preview" />
+        app:layout_constraintVertical_bias="0.106"
+        app:srcCompat="@drawable/logokit" />
 
     <Button
         android:id="@+id/gotologinn"
         android:layout_width="300dp"
         android:layout_height="65dp"
         android:layout_below="@+id/logo"
-        android:backgroundTint="#1324BE"
+        android:backgroundTint="#42B1DE"
         android:outlineAmbientShadowColor="@color/black"
 
         android:text="Login"
@@ -50,7 +51,7 @@
         android:layout_height="65dp"
         android:layout_below="@+id/gotologinn"
         android:layout_marginBottom="84dp"
-        android:backgroundTint="#1324BE"
+        android:backgroundTint="#42B1DE"
         android:outlineAmbientShadowColor="@color/black"
         android:text="Register as user"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -69,7 +70,7 @@
         android:layout_height="65dp"
         android:layout_below="@+id/gotoregister"
         android:layout_marginBottom="84dp"
-        android:backgroundTint="#1324BE"
+        android:backgroundTint="#42B1DE"
         android:outlineAmbientShadowColor="@color/black"
         android:text="Register as school"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
