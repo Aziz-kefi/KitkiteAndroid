@@ -46,12 +46,15 @@ class LoginActivity : AppCompatActivity() {
                 Response.Listener { response ->
                     Log.i("mylog", response.toString())
                     val token = response.getString("token")
+                    val userId = response.getJSONObject("user").getString("_id")
                     val sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
                     with (sharedPref.edit()) {
                         putString("token", token)
+                        putString("userId", userId)
                         apply()
                     }
-
+                    Log.i("mylog", "Stored token: $token")
+                    Log.i("mylog", "UserId: $userId")
                         val intent = Intent(this,HomeActivity::class.java)
                         startActivity(intent)
 

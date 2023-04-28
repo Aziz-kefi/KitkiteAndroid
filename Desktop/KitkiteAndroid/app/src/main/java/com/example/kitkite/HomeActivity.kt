@@ -1,8 +1,11 @@
 package com.example.kitkite
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 
@@ -32,6 +35,7 @@ class HomeActivity : AppCompatActivity() {
         create.setOnClickListener{
             val intent = Intent(this,CreatePostActivity::class.java)
             startActivity(intent)
+
         }
         school.setOnClickListener {
             val intent = Intent(this,SchoolActivity::class.java)
