@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+
+    </style>
+    <style name="AppTheme.EditTextStyle" parent="Widget.AppCompat.EditText">
+
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="AppTheme.ViewTextStyle" parent="Widget.AppCompat.TextView">
+
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="AppTheme.DayNight">
+        <item name="android:windowBackground">@color/day_mode_background</item>
+        <item name="android:textColor">@color/day_mode_text_color</item>
+
+    </style>
+    <style name="AppTheme.Dark" parent="AppTheme">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AppTheme.DayNight.Dark">
+        <item name="android:windowBackground">@color/night_mode_background</item>
+        <item name="android:textColor">@color/night_mode_text_color</item>
+
+    </style>
+</resources>

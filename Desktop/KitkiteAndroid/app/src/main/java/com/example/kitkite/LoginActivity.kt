@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.android.volley.Request
@@ -20,12 +21,14 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         lateinit var login : Button
+        lateinit var cbRememberMe: CheckBox
         lateinit var emailog : TextView
         lateinit var passwordlog : TextView
         lateinit var gotoregister : Button
         login=findViewById(R.id.logbutton)
         gotoregister=findViewById(R.id.button3)
         emailog=findViewById(R.id.emailog)
+        cbRememberMe = findViewById(R.id.cbRememberMe)
         passwordlog=findViewById(R.id.passwordlog)
         gotoregister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
@@ -40,7 +43,16 @@ class LoginActivity : AppCompatActivity() {
             data.put("email", emailog.text.toString())
             data.put("password", passwordlog.text.toString())
 
+            if (cbRememberMe.isChecked){
+                val sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                with (sharedPref.edit()) {
+                    putString("email", emailog.text.toString())
+                    putString("pw", passwordlog.text.toString())
+                    apply()
+                }
 
+
+            }
             val stringRequest = JsonObjectRequest(
                 Request.Method.POST, url, data,
                 Response.Listener { response ->
@@ -55,6 +67,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                     Log.i("mylog", "Stored token: $token")
                     Log.i("mylog", "UserId: $userId")
+
                         val intent = Intent(this,HomeActivity::class.java)
                         startActivity(intent)
 

@@ -10,6 +10,7 @@
     >
 
     <TextView
+
         android:id="@+id/heading"
         android:layout_width="361dp"
         android:layout_height="52dp"
@@ -30,6 +31,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <EditText
+        style="@style/AppTheme.EditTextStyle"
         android:id="@+id/schoolname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,6 +49,7 @@
 
 
     <EditText
+        style="@style/AppTheme.EditTextStyle"
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,6 +65,7 @@
         android:padding="10dp" />
 
     <EditText
+        style="@style/AppTheme.EditTextStyle"
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -78,6 +82,7 @@
         android:padding="10dp" />
 
     <EditText
+        style="@style/AppTheme.EditTextStyle"
         android:gravity="center"
         android:id="@+id/confirmpassword"
         android:layout_width="match_parent"
@@ -94,13 +99,15 @@
         android:padding="10dp" />
 
     <Button
+
         android:id="@+id/Registerbutton"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_below="@+id/confirmpassword"
         android:layout_marginTop="10dp"
         android:text="REGISTER"
-        android:backgroundTint="#42B1DE"
+        android:textColor="@color/white"
+        android:background="@drawable/button"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:cornerRadius="20dp" />
     <TextView
@@ -121,9 +128,10 @@
         android:layout_height="65dp"
         android:layout_below="@+id/already"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#42B1DE"
+        android:background="@drawable/button"
         android:outlineAmbientShadowColor="@color/black"
         android:text="LOGIN"
+        android:textColor="@color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:cornerRadius="20dp" />
 

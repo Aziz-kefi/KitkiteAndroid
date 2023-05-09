@@ -4,17 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity"
-    android:background="#EDEDED">
-    <include layout="@layout/activity_nav_bar"
-        android:id="@+id/navigation_bar"/>
+    android:background="#EDEDED"
+    tools:context=".ProfileActivity">
+
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/activity_nav_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/choosebutton"
 
-        android:layout_height="wrap_content"
-        android:text="Choose Photo"
         android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="#42B1DE"
+        android:text="Choose Photo"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/profile_image"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,14 +41,14 @@
         app:layout_constraintTop_toBottomOf="@+id/choosebutton" />
 
     <TextView
-
+        style="@style/AppTheme.ViewTextStyle"
         android:id="@+id/first_name"
-        android:background="@drawable/nav_bar"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:textAlignment="center"
+        android:background="@drawable/nav_bar"
         android:gravity="center"
         android:hint="First Name"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/last_name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,13 +56,14 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
     <TextView
+        style="@style/AppTheme.ViewTextStyle"
         android:id="@+id/last_name"
-        android:background="@drawable/nav_bar"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:textAlignment="center"
-        android:hint="Last Name"
+        android:background="@drawable/nav_bar"
         android:gravity="center"
+        android:hint="Last Name"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,13 +71,14 @@
         app:layout_constraintTop_toBottomOf="@+id/first_name" />
 
     <TextView
+        style="@style/AppTheme.ViewTextStyle"
         android:id="@+id/email"
-        android:background="@drawable/nav_bar"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:textAlignment="center"
-        android:hint="Email"
+        android:background="@drawable/nav_bar"
         android:gravity="center"
+        android:hint="Email"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/modifybutton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,10 +88,10 @@
     <Button
         android:id="@+id/modifybutton"
 
-        android:layout_height="wrap_content"
-        android:text="Modify"
         android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="#42B1DE"
+        android:text="Modify"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,12 +1,19 @@
 package com.example.kitkite
-
+import android.Manifest
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.AuthFailureError
 import com.android.volley.Request
@@ -22,6 +29,10 @@ import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 
 class ProfileActivity : AppCompatActivity() {
+    private val PICK_IMAGE_REQUEST = 1 // Request code for selecting an image
+    private lateinit var selectedImageUri: Uri // URI of the selected image
+
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -32,7 +43,7 @@ class ProfileActivity : AppCompatActivity() {
         val lastName = findViewById<TextView>(R.id.last_name)
         val email = findViewById<TextView>(R.id.email)
         val profileImage = findViewById<CircleImageView>(R.id.profile_image)
-
+        val choose= findViewById<Button>(R.id.choosebutton)
         lateinit var profile : ImageView
         lateinit var school : ImageView
         lateinit var event : ImageView
@@ -71,6 +82,15 @@ class ProfileActivity : AppCompatActivity() {
             val intent = Intent(this, ParamsActivity::class.java)
             startActivity(intent)
         }
+
+choose.setOnClickListener{
+    // Create an Intent to pick an image from the gallery
+    val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+    startActivityForResult(intent, PICK_IMAGE_REQUEST)
+}
+
+
+
         val queue = Volley.newRequestQueue(applicationContext)
         val url = Utility.apiUrl + "users/"+userId
         val stringRequest = object : StringRequest(
@@ -110,5 +130,18 @@ class ProfileActivity : AppCompatActivity() {
 // Add the request to the RequestQueue.
         queue.add(stringRequest)
 
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        // Check if the result is for selecting an image and if the operation was successful
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
+            // Get the URI of the selected image
+            selectedImageUri = data.data!!
+
+            // Set the selected image in the ImageView
+            val profileImage = findViewById<CircleImageView>(R.id.profile_image)
+            profileImage.setImageURI(selectedImageUri)
+        }
     }
 }

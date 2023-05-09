@@ -9,48 +9,52 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 
+
 class NavBarActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nav_bar)
-        lateinit var profile : ImageView
-        lateinit var school : ImageView
-        lateinit var event : ImageView
-        lateinit var home : ImageView
-        lateinit var param : ImageView
-        lateinit var message : ImageView
-        profile=findViewById<ImageView>(R.id.icon1)
-        school=findViewById<ImageView>(R.id.icon2)
-        message=findViewById<ImageView>(R.id.icon3)
-        event=findViewById<ImageView>(R.id.icon4)
-        home=findViewById<ImageView>(R.id.icon5)
-        param=findViewById<ImageView>(R.id.icon6)
-        profile.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
 
+        val profile = findViewById<ImageView>(R.id.icon1)
+        val school = findViewById<ImageView>(R.id.icon2)
+        val message = findViewById<ImageView>(R.id.icon3)
+        val event = findViewById<ImageView>(R.id.icon4)
+        val home = findViewById<ImageView>(R.id.icon5)
+        val param = findViewById<ImageView>(R.id.icon6)
+        fun createIntent(imageView: ImageView): Intent {
+            return when (imageView) {
+                profile -> Intent(this, ProfileActivity::class.java)
+                school -> Intent(this, SchoolActivity::class.java)
+                message -> Intent(this, MessageActivity::class.java)
+                event -> Intent(this, EventActivity::class.java)
+                home -> Intent(this, HomeActivity::class.java)
+                param -> Intent(this, ParamsActivity::class.java)
+                else -> throw IllegalArgumentException("Invalid ImageView")
+            }
         }
+        profile.setOnClickListener {
+            startActivity(createIntent(profile))
+        }
+
         school.setOnClickListener {
-            val intent = Intent(this,SchoolActivity::class.java)
-            startActivity(intent)
+            startActivity(createIntent(school))
         }
+
         message.setOnClickListener {
-            val intent = Intent(this, MessageActivity::class.java)
-            startActivity(intent)
+            startActivity(createIntent(message))
         }
+
         event.setOnClickListener {
-            val intent = Intent(this,EventActivity::class.java)
-            startActivity(intent)
+            startActivity(createIntent(event))
         }
+
         home.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+            startActivity(createIntent(home))
         }
+
         param.setOnClickListener {
-            val intent = Intent(this, ParamsActivity::class.java)
-            startActivity(intent)
+            startActivity(createIntent(param))
         }
     }
-
-
 }

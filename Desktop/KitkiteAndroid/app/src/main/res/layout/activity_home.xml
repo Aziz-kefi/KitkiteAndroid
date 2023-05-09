@@ -5,11 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#EDEDED"
-    tools:context=".HomeActivity">
+    tools:context=".HomeActivity"
+    style="@style/AppTheme.ViewTextStyle">
 
     <!-- Navigation Bar -->
-    <include layout="@layout/activity_nav_bar"
-        android:id="@+id/navigation_bar"/>
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/activity_nav_bar"
+         />
 
     <LinearLayout
         android:id="@+id/addpost_bar"
@@ -48,18 +51,18 @@
             android:textColor="#004AAD"
             android:textSize="20sp" />
     </LinearLayout>
-    <ListView
-        android:id="@+id/post_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/addpost_bar"
-        android:divider="@null"
-        android:dividerHeight="0dp"
-        android:padding="8dp"
-        android:clipToPadding="false"
-        android:scrollbarStyle="outsideInset"
-        android:scrollbars="vertical" >
-
-    </ListView>
+        style="@style/AppTheme.ViewTextStyle">
+    <include
+        android:id="@+id/post_item"
+        layout="@layout/activity_post_item"
+        style="@style/AppTheme.ViewTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    </ScrollView>
 
 </RelativeLayout>

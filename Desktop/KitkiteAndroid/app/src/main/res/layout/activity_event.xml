@@ -4,8 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventActivity"
-    android:background="#EDEDED">
-    <include layout="@layout/activity_nav_bar"
-        android:id="@+id/navigation_bar"/>
+    android:background="#EDEDED"
+    tools:context=".EventActivity">
+
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/activity_nav_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,8 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ParamsActivity"
-    android:background="#EDEDED">
-    <include layout="@layout/activity_nav_bar"
-        android:id="@+id/navigation_bar"/>
+    android:background="#EDEDED"
+    tools:context=".ParamsActivity">
+
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/activity_nav_bar"
+        app:layout_constraintBottom_toTopOf="@+id/switch1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nav_bar"
+        android:padding="15dp"
+        android:switchPadding="80dp"
+        android:text="Dark Mode Off(Default)/On"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:thumb="@drawable/my_thumb_drawable"
+        app:layout_constraintBottom_toBottomOf="@+id/switch2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navigation_bar"
+        app:layout_constraintVertical_bias="0.088" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nav_bar"
+        android:padding="15dp"
+        android:switchPadding="80dp"
+        android:text="Notification Send"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:thumb="@drawable/my_thumb_drawable"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1"
+        app:layout_constraintVertical_bias="0.088" />
+
+    <LinearLayout
+        android:id="@+id/log_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nav_bar"
+        android:clickable="true"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch2"
+        app:layout_constraintVertical_bias="0.473">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/sortir"
+
+
+            android:contentDescription="Logout" />
+
+        <TextView
+            android:layout_width="285dp"
+            android:layout_height="60dp"
+
+            android:gravity="center"
+            android:text="Sad to see you go"
+            android:textColor="#FF0000"
+            android:textSize="30sp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
